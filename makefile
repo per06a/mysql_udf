@@ -1,5 +1,6 @@
 
-MYSQL=mysql -u root -p1234
+# Replace this line with actual credentials and/or hostname for MySQL
+MYSQL=mysql
 MYSQL_H=/usr/include/mysql/
 MYSQL_SO=/usr/lib/mysql/plugin
 

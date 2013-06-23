@@ -80,13 +80,6 @@ my_bool GETUTCDATE_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
   return 0;
 }
 
-/****************************************************************************
- ** Deinit function. This should free all resources allocated by
- ** this function.
- ** Arguments:
- ** initidReturn value from xxxx_init
- ****************************************************************************/
-
 char *GETUTCDATE(UDF_INIT *initid __attribute__((unused)),
 		 UDF_ARGS *args, char *result, unsigned long *length,
 		 char *is_null, char *error __attribute__((unused))) {
