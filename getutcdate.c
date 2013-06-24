@@ -61,6 +61,7 @@ static pthread_mutex_t LOCK_hostname;
 #include <time.h>
 #include <string.h>
 #include <sys/time.h>
+#include <stdlib.h>
 
 
 /* These must be right or mysqld will not find the symbol! */
@@ -97,6 +98,10 @@ char *GETUTCDATE(UDF_INIT *initid __attribute__((unused)),
 
   strftime(buff, *length, "%Y-%m-%d %H:%M:%S.%%06d", &gm_time);
   snprintf(result, *length, buff, time_of_day.tv_usec);
+  
+  /* Have the set *length per
+     http://dev.mysql.com/doc/refman/5.6/en/udf-return-values.html */
+  *length = strnlen(result, *length);
 
   return result;
 }
